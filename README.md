@@ -2,7 +2,7 @@
 
 Trang dashboard cá nhân tĩnh, viết bằng HTML, CSS và JavaScript.
 
-- Mở trang GitHub Pages sau khi bật Pages cho nhánh `main` và thư mục gốc.
-- Trang đang được xuất bản tại: https://huy-personal-workspace.ideallotus514.chatgpt.site
+- Mở website: https://huy02062007.github.io/
+- GitHub Pages được xuất bản từ nhánh `main`, thư mục gốc.
 
 Tệp chính: `index.html`.
