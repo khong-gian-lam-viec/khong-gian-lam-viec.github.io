@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8e9e1" />
+  <meta name="description" content="Không gian cá nhân của Huy — một nơi để gom việc, ghi chú và giữ hướng đi." />
+  <title>Không gian của Huy</title>
+  <style>
+    :root{--ink:#292522;--muted:#8f817a;--line:#eaded7;--paper:rgba(255,252,249,.72);--white:#fffdfa;--peach:#ed8d68;--peach-dark:#ce704f;--rose:#f8e9e1;--shadow:0 16px 44px rgba(98,66,49,.055);--serif:Georgia,'Times New Roman',serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:14px/1.5 Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:radial-gradient(ellipse at 84% 2%,rgba(253,211,192,.56),transparent 32%),radial-gradient(ellipse at 12% 48%,rgba(255,248,240,.78),transparent 38%),linear-gradient(135deg,#f8eee5 0%,#f9e8e2 56%,#fae9eb 100%);min-height:100vh}
+    button,input{font:inherit}button{color:inherit}.app{max-width:1600px;margin:0 auto;padding:16px;display:grid;grid-template-columns:224px minmax(0,1fr);gap:28px;min-height:100vh}.sidebar{align-self:stretch;position:sticky;top:16px;height:calc(100vh - 32px);min-height:650px;border:1px solid rgba(255,255,255,.72);border-radius:25px;background:rgba(255,251,247,.66);backdrop-filter:blur(18px);padding:24px 15px;display:flex;flex-direction:column;box-shadow:0 12px 38px rgba(110,75,55,.035)}.brand{display:flex;align-items:center;gap:11px;padding:2px 7px 25px;font-weight:700;font-size:14px;letter-spacing:-.02em}.brand-mark{width:29px;height:29px;border-radius:10px;background:#f2a17e;display:grid;place-items:center;color:white;font-size:16px;box-shadow:0 5px 12px #e59e7d55}.nav-label{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#ad9d94;padding:13px 11px 7px}.nav{display:grid;gap:4px}.nav a{display:flex;align-items:center;gap:11px;padding:9px 11px;border-radius:11px;text-decoration:none;color:#766b65;transition:.2s}.nav a:hover,.nav a.active{background:rgba(255,255,255,.82);color:#322c28}.nav a.active{box-shadow:0 4px 15px rgba(84,61,47,.04);font-weight:600}.nav-icon{width:17px;text-align:center;color:#b88e79;font-size:15px}.nav-divider{height:1px;background:var(--line);margin:15px 8px 8px}.side-bottom{margin-top:auto;padding:15px 8px 2px;color:#9a8b83;font-size:11px}.avatar-line{display:flex;align-items:center;gap:10px}.avatar{width:31px;height:31px;display:grid;place-items:center;border-radius:50%;background:#f1d6c8;color:#8d5944;font-weight:700}.side-user{color:#554b45;font-weight:600;font-size:12px}.side-note{margin-left:41px;margin-top:2px}
+    main{min-width:0;padding:10px 12px 60px 0}.topbar{display:flex;justify-content:space-between;align-items:center;color:#82756e;font-size:12px;padding:2px 4px 24px}.top-actions{display:flex;align-items:center;gap:17px}.top-actions button{border:0;background:transparent;color:#796c65;cursor:pointer;padding:5px}.top-actions button:hover{color:var(--peach-dark)}.top-avatar{width:30px;height:30px;border-radius:50%;background:#fffdfb;color:#66574f;display:grid;place-items:center;font-weight:700;border:1px solid #fff}
+    .hero{display:grid;grid-template-columns:minmax(0,1fr) 235px;align-items:center;gap:24px;margin:12px 3px 18px}.eyebrow{font-size:11px;color:#a48778;letter-spacing:.11em;text-transform:uppercase;margin-bottom:10px}.hero h1{font-size:clamp(34px,4vw,51px);letter-spacing:-.055em;line-height:1.08;margin:0 0 10px;font-weight:650}.hero p{margin:0;color:#82756e;font-size:14px}.today-card{background:rgba(255,251,248,.74);border:1px solid rgba(255,255,255,.8);border-radius:19px;padding:17px 19px;box-shadow:var(--shadow)}.today-card .time{font-size:21px;font-weight:650;letter-spacing:-.03em}.today-card .caption{margin-top:4px;font-size:11px;color:#97877f}.pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e98e6b;margin-right:7px;box-shadow:0 0 0 4px #e98e6b20}
+    .capture{display:flex;gap:10px;align-items:center;background:rgba(255,253,251,.76);border:1px solid rgba(255,255,255,.9);border-radius:15px;padding:7px 8px 7px 17px;box-shadow:0 8px 22px rgba(117,75,50,.04)}.capture input{width:100%;border:0;outline:0;background:transparent;padding:8px 0;color:var(--ink)}.capture input::placeholder{color:#a99a91}.capture button,.primary{flex:none;border:0;background:var(--peach);color:white;border-radius:10px;padding:9px 14px;cursor:pointer;box-shadow:0 5px 12px #e18b6950;transition:.18s}.capture button{font-size:19px;line-height:1;padding:7px 12px}.capture button:hover,.primary:hover{background:var(--peach-dark);transform:translateY(-1px)}
+    .section{margin-top:37px;scroll-margin-top:24px}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:0 2px 13px}.section-head h2{font-family:inherit;font-size:22px;letter-spacing:-.012em;margin:0;font-weight:650;line-height:1.3}.section-head p{margin:0;color:#a18f86;font-size:11px}.grid{display:grid;gap:14px}.metrics{grid-template-columns:repeat(4,minmax(0,1fr))}.card{background:var(--paper);border:1px solid rgba(255,255,255,.78);border-radius:19px;box-shadow:var(--shadow)}.metric{min-height:135px;padding:17px 19px}.metric-label{font-size:11px;color:#8d7d74}.metric-value{font-size:27px;line-height:1.05;font-weight:650;letter-spacing:-.05em;margin:13px 0 8px}.metric-value small{font-size:12px;font-weight:500;letter-spacing:0;color:#8d7d74}.metric-hint{font-size:11px;color:#9c8e86}.metric-mark{float:right;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#fff6f0;color:#cb8263;font-size:14px}
+    .focus-panel{margin-top:14px;padding:2px 18px}.focus-row{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #eee3dd}.focus-row:last-child{border-bottom:0}.focus-item{padding:13px 3px;display:flex;gap:10px;align-items:flex-start}.dot{width:7px;height:7px;border-radius:50%;background:#e98d6b;flex:none;margin-top:7px}.dot.hollow{background:transparent;border:1px solid #b7a49a}.focus-title{font-size:12px}.focus-sub{font-size:10px;color:#a08f86;margin-top:2px}
+    .core-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.core-card{padding:17px 18px;min-height:184px;display:flex;flex-direction:column}.core-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.core-name{font-size:12px;color:#74665e;font-weight:600;overflow-wrap:anywhere}.core-name.empty{color:#a89a92;font-weight:500}.core-edit{border:0;background:transparent;color:#ac8b79;cursor:pointer;font-size:11px;padding:4px}.core-edit:hover{color:var(--peach-dark)}.core-current-label{font-size:10px;color:#a08f86;margin-top:13px}.core-value{font-size:27px;letter-spacing:-.045em;font-weight:650;margin:1px 0 2px}.core-value small{font-size:11px;color:#a08f86;letter-spacing:0;font-weight:500}.core-target{font-size:11px;color:#9a8a81}.core-description{font-size:11px;color:#8f8078;margin-top:9px;min-height:32px}.core-progress{height:4px;border-radius:4px;background:#eee4df;margin-top:auto;overflow:hidden}.core-progress i{display:block;height:100%;background:#e79370;border-radius:4px}.core-form{display:grid;gap:7px;margin-top:10px}.core-form input,.core-form textarea{width:100%;border:1px solid #eee1da;border-radius:8px;padding:7px 9px;background:#fffaf7;color:var(--ink);font:inherit;font-size:11px;outline:0}.core-form textarea{resize:vertical;min-height:46px}.core-form input:focus,.core-form textarea:focus{border-color:#e7a183}.core-form-row{display:grid;grid-template-columns:1fr 1fr;gap:7px}.core-form-actions{display:flex;justify-content:flex-end;gap:7px;margin-top:2px}.core-form-actions button{border:1px solid #eaded7;background:#fffaf7;border-radius:8px;padding:6px 10px;font-size:10px;cursor:pointer}.core-form-actions button[type=submit]{background:var(--peach);color:#fff;border-color:var(--peach)}
+    .module-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.module-card{padding:18px;scroll-margin-top:24px}.module-title{font-size:17px;letter-spacing:-.02em;margin:0;font-weight:650}.module-desc{font-size:11px;color:#92837b;min-height:34px;margin:6px 0 0}.module-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:14px}.module-item{display:flex;align-items:flex-start;gap:8px;padding:10px;background:rgba(255,253,251,.58);border:1px solid rgba(255,255,255,.8);border-radius:11px;font-size:11px;min-height:62px}.module-item.priority{grid-column:span 2;background:#fff6ef;border-color:#f5dfd2}.module-item input{accent-color:var(--peach);width:14px;height:14px;flex:none;margin:2px 0 0}.module-item.done span{text-decoration:line-through;color:#a69991}.priority-tag{font-size:9px;color:#bd7656;text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}.quick-actions{display:flex;align-items:center;gap:8px;margin-left:auto}.quick-actions button{border:1px solid #f0ddd2;background:#fff8f3;color:#9c644c;border-radius:10px;padding:9px 11px;font-size:11px;white-space:nowrap;cursor:pointer;transition:.18s}.quick-actions button:first-child{background:var(--peach);border-color:var(--peach);color:#fff}.quick-actions button:hover{transform:translateY(-1px);border-color:#e9a185}.quick-entry-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.quick-entry{padding:17px 18px;text-decoration:none;color:inherit;display:block;transition:.18s}.quick-entry:hover{transform:translateY(-2px);background:rgba(255,253,251,.92)}.quick-entry .rank{font-size:10px;color:#bf8265;letter-spacing:.1em;text-transform:uppercase}.quick-entry h3{font-size:14px;margin:8px 0 5px;font-weight:650}.quick-entry p{font-size:11px;color:#93847c;margin:0;line-height:1.55}
+    .today-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.day-card{padding:17px 19px;min-height:132px}.day-card h3{font-size:11px;font-weight:500;color:#8d7d74;margin:0 0 15px}.day-card strong{font-size:27px;letter-spacing:-.05em}.day-card p{font-size:11px;color:#988980;margin:7px 0 0}.progress{height:4px;border-radius:5px;background:#eee4df;margin-top:13px;overflow:hidden}.progress i{display:block;height:100%;width:36%;border-radius:5px;background:#e79370}
+    .three-col{grid-template-columns:repeat(3,minmax(0,1fr))}.list-card{padding:17px 19px;min-height:188px}.list-card h3{font-size:11px;color:#8c7d75;font-weight:500;margin:0 0 8px}.list-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #eee5df;font-size:12px}.list-item:last-child{border-bottom:0}.list-item small{color:#a4948b;font-size:10px;white-space:nowrap}.quiet{color:#aa9a91;font-size:11px;padding:10px 0}.task-list{margin-top:13px}.task{display:flex;align-items:center;gap:9px;padding:9px 0;border-bottom:1px solid #eee5df;font-size:12px}.task:last-child{border:0}.task input{accent-color:var(--peach);width:15px;height:15px}.task.done span{text-decoration:line-through;color:#a69991}.task-date{margin-left:auto;color:#a4948b;font-size:10px}.inline-add{display:flex;gap:7px;margin-top:8px}.inline-add input{width:100%;border:1px solid #efe3dc;background:#fffaf7;border-radius:9px;padding:8px 10px;outline:0;font-size:11px}.inline-add input:focus{border-color:#e7a183}.inline-add button{border:0;background:#f3e0d6;border-radius:9px;width:34px;cursor:pointer;color:#a66d54;font-size:16px}.notes{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:14px}.note-card{padding:17px 19px;min-height:142px}.note-card .tag{font-size:10px;color:#b07b61;text-transform:uppercase;letter-spacing:.1em}.note-card h3{font-size:14px;font-family:inherit;letter-spacing:-.01em;line-height:1.4;margin:13px 0 6px;font-weight:600}.note-card p{margin:0;color:#92837b;font-size:11px}.note-stack{display:grid;gap:10px}.saved-note{padding:11px 13px;background:rgba(255,253,251,.62);border:1px solid rgba(255,255,255,.75);border-radius:12px;font-size:12px;display:flex;justify-content:space-between;gap:12px}.saved-note time{white-space:nowrap;color:#a6968d;font-size:10px}.long-term{grid-template-columns:1.15fr 1fr}.goal-card{padding:19px}.goal-line{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid #eee5df}.goal-line:last-child{border:0}.goal-line strong{font-size:12px;font-weight:550}.goal-line span{font-size:10px;color:#a08f86}.footer{margin-top:38px;text-align:center;color:#b0a198;font-size:10px}
+    .toast{position:fixed;right:23px;bottom:23px;padding:12px 16px;background:#38312d;color:#fff;border-radius:12px;box-shadow:0 10px 30px #32251e30;opacity:0;transform:translateY(8px);pointer-events:none;transition:.22s;z-index:5;font-size:12px}.toast.show{opacity:1;transform:translateY(0)}.mobile-menu{display:none}
+    @media(max-width:1100px){.app{grid-template-columns:190px minmax(0,1fr);gap:18px;padding:12px}.sidebar{padding:20px 12px}.metrics,.today-grid,.core-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.module-grid{grid-template-columns:1fr}.module-desc{min-height:0}.notes{grid-template-columns:1fr 1fr}.note-stack{grid-column:1/-1;grid-template-columns:1fr 1fr}.hero{grid-template-columns:minmax(0,1fr) 210px}}
+    @media(max-width:720px){.app{display:block;padding:9px}.sidebar{position:fixed;z-index:10;left:9px;top:9px;bottom:9px;height:auto;min-height:0;width:250px;transform:translateX(calc(-100% - 16px));transition:transform .25s ease;box-shadow:0 18px 60px #35291f30}.sidebar.open{transform:translateX(0)}main{padding:5px 5px 40px}.mobile-menu{display:inline-grid;place-items:center;border:1px solid #fff;background:#fff9;border-radius:9px;width:31px;height:31px;margin-right:8px}.topbar{padding-bottom:18px}.topbar-left{display:flex;align-items:center}.hero{grid-template-columns:1fr;gap:17px;margin-top:6px}.hero h1{font-size:38px}.today-card{max-width:none}.section{margin-top:31px}.three-col,.long-term,.quick-entry-grid{grid-template-columns:1fr}.module-grid{grid-template-columns:1fr}.module-card{padding:15px}.module-items{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics,.today-grid,.core-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.metric,.day-card,.core-card{padding:15px;min-height:124px}.metric-value,.day-card strong,.core-value{font-size:24px}.capture{align-items:stretch;flex-wrap:wrap;padding:12px}.capture input{min-width:100%;padding:6px 2px}.quick-actions{width:100%;margin:0;display:grid;grid-template-columns:1fr}.quick-actions button{width:100%}.notes{grid-template-columns:1fr}.note-stack{grid-column:auto;grid-template-columns:1fr}.section-head p{display:none}.brand{padding-bottom:18px}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="brand-mark">✳</span><span>Không gian của Gia Huy</span></div>
+      <div class="nav-label">Quản lý cá nhân</div>
+      <nav class="nav" aria-label="Quản lý cá nhân">
+        <a class="active" href="#home"><span class="nav-icon">⌂</span>Tổng quan</a>
+        <a href="#study"><span class="nav-icon">▤</span>Học tập</a>
+        <a href="#health"><span class="nav-icon">♡</span>Sức khỏe</a>
+        <a href="#finance"><span class="nav-icon">◉</span>Tài chính</a>
+      </nav>
+      <div class="nav-divider"></div>
+      <div class="nav-label">Công cụ & tài khoản</div>
+      <nav class="nav" aria-label="Công cụ và tài khoản">
+        <a href="#calendar"><span class="nav-icon">◷</span>Lịch cá nhân</a>
+        <a href="#longterm"><span class="nav-icon">↗</span>Mục tiêu</a>
+        <a href="#settings"><span class="nav-icon">⚙</span>Cài đặt</a>
+        <a href="#profile"><span class="nav-icon">●</span>Hồ sơ</a>
+      </nav>
+      <div class="side-bottom"><div class="avatar-line"><span class="avatar">GH</span><span class="side-user">Gia Huy</span></div><div class="side-note">Sinh viên · không gian cá nhân</div></div>
+    </aside>
+    <main id="home">
+      <header class="topbar"><div class="topbar-left"><button class="mobile-menu" id="menuButton" aria-label="Mở điều hướng">☰</button><span id="dateLabel"></span></div><div class="top-actions"><button id="searchButton">Tìm kiếm</button><button id="helpButton">Gợi ý</button><span class="top-avatar">GH</span></div></header>
+      <section class="hero">
+        <div id="profile"><div class="eyebrow">Không gian cá nhân · Gia Huy</div><h1 id="greeting">Xin chào, Gia Huy.</h1><p>Hiện tại tôi là sinh viên · Từng bước học tốt hơn, sống khỏe hơn và chủ động với tương lai.</p></div>
+        <div class="today-card"><div class="time"><span class="pulse"></span><span id="clock"></span></div><div class="caption">Hôm nay · bắt đầu từ một việc nhỏ</div></div>
+      </section>
+      <form class="capture" id="captureForm"><input id="captureInput" aria-label="Nội dung thao tác nhanh" placeholder="Nhập nội dung rồi chọn thao tác…" autocomplete="off" /><div class="quick-actions"><button type="button" data-quick-action="task">Thêm nhiệm vụ</button><button type="button" data-quick-action="activity">Ghi lại hoạt động</button><button type="button" data-quick-action="savings">Thêm khoản tiết kiệm</button></div></form>
+
+      <section class="section" id="core-metrics">
+        <div class="section-head"><h2>4 chỉ số cốt lõi</h2><p>Giá trị hôm nay · hướng đến mục tiêu</p></div>
+        <div class="grid core-grid" id="coreGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="section" id="focus">
+        <div class="section-head"><h2>Ba lĩnh vực của mình</h2><p>Việc nhỏ, mục tiêu rõ ràng</p></div>
+        <div class="grid module-grid" id="moduleGrid"></div>
+      </section>
+
+      <section class="section" id="calendar">
+        <div class="section-head"><h2>Hôm nay</h2><p>Ngày mới, bắt đầu nhẹ thôi</p></div>
+        <div class="grid today-grid">
+          <article class="card day-card"><h3>Việc đã xong</h3><strong id="doneCount">0</strong><p>Đánh dấu khi hoàn thành</p><div class="progress"><i id="doneProgress"></i></div></article>
+          <article class="card day-card"><h3>Đang chờ bạn</h3><strong id="openCount">0</strong><p>Việc nhỏ cũng có thể bắt đầu</p></article>
+          <article class="card day-card"><h3>Ghi chú hôm nay</h3><strong id="noteCount">0</strong><p>Ý tưởng được lưu trên thiết bị này</p></article>
+          <article class="card day-card"><h3>Nhịp sống</h3><strong>Chậm mà chắc</strong><p>Hãy để lịch vừa với năng lượng</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="tasks">
+        <div class="section-head"><h2>Nhiệm vụ hôm nay</h2><p>Thêm nhanh từ thanh nhập phía trên</p></div>
+        <article class="card list-card"><h3>Việc cần làm</h3><div id="taskList" class="task-list"></div><form id="taskForm" class="inline-add"><input id="taskInput" placeholder="Thêm một việc…" aria-label="Thêm việc cần làm" autocomplete="off"/><button aria-label="Thêm việc" type="submit">＋</button></form></article>
+      </section>
+
+      <section class="section" id="notes">
+        <div class="section-head"><h2>Ghi chú · Ý tưởng · Điều muốn nhớ</h2><p>Những mẩu nghĩ nhỏ đều có chỗ</p></div>
+        <div class="notes">
+          <article class="card note-card"><span class="tag">Bắt đầu từ đây</span><h3>Điều gì làm một ngày của Huy trở nên đáng giá?</h3><p>Viết vài dòng về điều mình muốn có nhiều hơn — hoặc ít đi.</p></article>
+          <article class="card note-card"><span class="tag">Câu hỏi cho mình</span><h3>Mình muốn dành sự chú ý cho điều gì?</h3><p>Không cần câu trả lời hoàn hảo. Chỉ cần thành thật ở thời điểm này.</p></article>
+          <div class="note-stack" id="noteList" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section" id="longterm">
+        <div class="section-head"><h2>Nhìn về phía trước</h2><p>Định hướng có thể thay đổi khi bạn hiểu mình hơn</p></div>
+        <div class="grid long-term">
+          <article class="card goal-card"><div class="goal-line"><strong>Điều mình muốn xây dựng</strong><span>viết khi sẵn sàng</span></div><div class="goal-line"><strong>Người mình muốn trở thành</strong><span>đang hình thành</span></div><div class="goal-line"><strong>Điều mình muốn gìn giữ</strong><span>luôn có chỗ</span></div></article>
+          <article class="card goal-card"><div class="goal-line"><strong>Tháng này</strong><span>một hướng tập trung</span></div><div class="goal-line"><strong>Trong năm nay</strong><span>một điều muốn tiến gần</span></div><div class="goal-line"><strong>Về lâu dài</strong><span>điều khiến mình thấy có ý nghĩa</span></div></article>
+        </div>
+      </section>
+      <section class="section" id="quick-entries">
+        <div class="section-head"><h2>Bắt đầu nhanh</h2><p>Ba việc đáng dành sự chú ý</p></div>
+        <div class="grid quick-entry-grid">
+          <a class="card quick-entry" href="#study"><span class="rank">Hạng 1 · Học tập</span><h3>Hoàn thành bài tập</h3><p>Hoàn thành các bài tập đúng hạn để cải thiện kết quả học tập.</p></a>
+          <a class="card quick-entry" href="#health"><span class="rank">Hạng 2 · Sức khỏe</span><h3>Theo dõi sức khỏe</h3><p>Ghi lại thời gian tập thể dục và giấc ngủ để duy trì sức khỏe tốt.</p></a>
+          <a class="card quick-entry" href="#finance"><span class="rank">Hạng 3 · Tài chính</span><h3>Quản lý tiết kiệm</h3><p>Theo dõi số tiền tiết kiệm hằng ngày để đạt mục tiêu tài chính cá nhân.</p></a>
+        </div>
+      </section>
+      <section class="section" id="settings">
+        <div class="section-head"><h2>Cài đặt</h2><p>Không gian cá nhân của Gia Huy</p></div>
+        <article class="card list-card"><h3>Dữ liệu và thời gian</h3><div class="list-item"><span>Nhiệm vụ, hoạt động và trạng thái mục tiêu</span><small>Lưu trên trình duyệt này</small></div><div class="list-item"><span>Định dạng giờ</span><small>24 giờ · Việt Nam</small></div></article>
+      </section>
+      <div class="footer">Không gian này thuộc về Gia Huy · Ghi chú và công việc được lưu cục bộ trên trình duyệt</div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script>
+    const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+    const storageKey='huy-workspace-v1';
+    const metricDefaults=[
+      {name:'Thời gian học tập',current:'2 giờ',target:'4 giờ',description:'Theo dõi thời gian học mỗi ngày để cải thiện kết quả học tập.'},
+      {name:'Tập thể dục',current:'20 phút',target:'30 phút',description:'Giúp nâng cao sức khỏe và duy trì thói quen vận động.'},
+      {name:'Tiết kiệm tiền',current:'30.000 VNĐ',target:'50.000 VNĐ',description:'Theo dõi số tiền tiết kiệm mỗi ngày để đạt mục tiêu tài chính.'},
+      {name:'Học tiếng Anh',current:'15 phút',target:'45 phút',description:'Cải thiện khả năng tiếng Anh thông qua việc luyện tập hằng ngày.'}
+    ];
+    const modules=[
+      {id:'study',title:'Học tập (Study)',description:'Giúp tôi quản lý thời gian học tập và cải thiện kết quả học mỗi ngày.',items:[{id:'study-homework',text:'Hoàn thành bài tập đúng hạn',priority:true},{id:'study-review',text:'Ôn lại kiến thức đã học trên lớp'},{id:'study-english',text:'Học thêm 10 từ vựng tiếng Anh mỗi ngày'}]},
+      {id:'health',title:'Sức khỏe (Health)',description:'Giúp tôi duy trì sức khỏe và xây dựng lối sống lành mạnh.',items:[{id:'health-sleep',text:'Ngủ đủ 8 tiếng mỗi ngày',priority:true},{id:'health-exercise',text:'Tập thể dục ít nhất 30 phút'},{id:'health-water',text:'Uống đủ 2 lít nước mỗi ngày'}]},
+      {id:'finance',title:'Tài chính cá nhân (Personal Finance)',description:'Giúp tôi quản lý chi tiêu và tiết kiệm tiền cho tương lai.',items:[{id:'finance-save',text:'Tiết kiệm 50.000 VNĐ mỗi ngày',priority:true},{id:'finance-record',text:'Ghi chép các khoản chi tiêu hằng ngày'},{id:'finance-spending',text:'Hạn chế mua những món đồ không cần thiết'}]}
+    ];
+    const read=()=>{try{return JSON.parse(localStorage.getItem(storageKey))||{tasks:[],notes:[]}}catch{return{tasks:[],notes:[]}}};
+    let data=read();if(!Array.isArray(data.tasks))data.tasks=[];if(!Array.isArray(data.notes))data.notes=[];
+    data.metrics=metricDefaults.map((metric,i)=>{const saved=Array.isArray(data.metrics)?data.metrics[i]:null;return saved&&(saved.name||saved.current||saved.target||saved.description)?saved:metric});
+    if(!Array.isArray(data.moduleTasks))data.moduleTasks=modules.flatMap(module=>module.items.map(item=>({id:item.id,done:false})));
+    const save=()=>localStorage.setItem(storageKey,JSON.stringify(data));
+    const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const today=new Date();
+    $('#dateLabel').textContent=new Intl.DateTimeFormat('vi-VN',{weekday:'long',day:'numeric',month:'long',timeZone:'Asia/Ho_Chi_Minh'}).format(today);
+    const setClock=()=>{$('#clock').textContent=new Intl.DateTimeFormat('vi-VN',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Ho_Chi_Minh'}).format(new Date())};setClock();setInterval(setClock,30000);
+    let toastTimer;function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2400)}
+    function renderMetrics(){
+      const grid=$('#coreGrid');
+      grid.innerHTML=data.metrics.slice(0,4).map((m,i)=>{
+        const editing=grid.dataset.editing===String(i),current=escapeHtml(m.current||'—'),target=escapeHtml(m.target||'Chưa đặt');
+        const now=Number.parseFloat(String(m.current).replace(/[^\d.,-]/g,'').replace(',','.')),goal=Number.parseFloat(String(m.target).replace(/[^\d.,-]/g,'').replace(',','.'));
+        const pct=Number.isFinite(now)&&Number.isFinite(goal)&&goal>0?Math.max(0,Math.min(100,Math.round(now/goal*100))):null;
+        return `<article class="card core-card">${editing?`<form class="core-form" data-metric-form="${i}"><input name="name" maxlength="48" placeholder="Tên chỉ số" aria-label="Tên chỉ số" value="${escapeHtml(m.name)}"/><div class="core-form-row"><input name="current" maxlength="32" placeholder="Giá trị hiện tại" aria-label="Giá trị hiện tại" value="${escapeHtml(m.current)}"/><input name="target" maxlength="32" placeholder="Giá trị mục tiêu" aria-label="Giá trị mục tiêu" value="${escapeHtml(m.target)}"/></div><textarea name="description" maxlength="120" placeholder="Mô tả ngắn gọn" aria-label="Mô tả ngắn gọn">${escapeHtml(m.description)}</textarea><div class="core-form-actions"><button type="button" data-cancel-metric>Hủy</button><button type="submit">Lưu</button></div></form>`:`<div class="core-top"><span class="core-name ${m.name?'':'empty'}">${escapeHtml(m.name||`Chỉ số ${i+1}`)}</span><button class="core-edit" type="button" data-edit-metric="${i}">Chỉnh sửa</button></div><div class="core-current-label">Giá trị hôm nay</div><div class="core-value">${current}</div><div class="core-target">Giá trị mục tiêu · ${target}</div><div class="core-description">${escapeHtml(m.description||'Thêm mô tả ngắn gọn cho chỉ số này.')}</div>${pct===null?'':`<div class="core-progress" aria-label="Đạt ${pct}% mục tiêu"><i style="width:${pct}%"></i></div>`}`}</article>`;
+      }).join('');
+    }
+    function renderModules(){
+      $('#moduleGrid').innerHTML=modules.map(module=>`<article class="card module-card" id="${module.id}"><h3 class="module-title">${escapeHtml(module.title)}</h3><p class="module-desc">${escapeHtml(module.description)}</p><div class="module-items">${module.items.map(item=>{const saved=data.moduleTasks.find(task=>task.id===item.id);return `<label class="module-item ${item.priority?'priority':''} ${saved?.done?'done':''}"><input type="checkbox" data-module-task="${item.id}" ${saved?.done?'checked':''}/><div>${item.priority?'<div class="priority-tag">Quan trọng nhất</div>':''}<span>${escapeHtml(item.text)}</span></div></label>`}).join('')}</div></article>`).join('');
+    }
+    function render(){
+      renderMetrics();renderModules();
+      const list=$('#taskList');list.innerHTML=data.tasks.length?data.tasks.map((x,i)=>`<label class="task ${x.done?'done':''}"><input type="checkbox" data-task="${i}" ${x.done?'checked':''}/><span>${escapeHtml(x.text)}</span></label>`).join(''):'<div class="quiet">Chưa có việc nào. Thêm nhiệm vụ từ thanh nhập phía trên.</div>';
+      const moduleDone=data.moduleTasks.filter(x=>x.done).length,moduleOpen=data.moduleTasks.length-moduleDone,done=data.tasks.filter(x=>x.done).length+moduleDone,open=data.tasks.filter(x=>!x.done).length+moduleOpen,total=data.tasks.length+data.moduleTasks.length;
+      $('#doneCount').textContent=done;$('#openCount').textContent=open;$('#doneProgress').style.width=(total?Math.round(done/total*100):0)+'%';
+      $('#noteCount').textContent=data.notes.length;$('#noteList').innerHTML=data.notes.length?data.notes.slice().reverse().map(n=>`<article class="saved-note"><span>${escapeHtml(n.text)}</span><time>${new Date(n.at).toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'})}</time></article>`).join(''):'<article class="saved-note"><span>Ghi chú mới của bạn sẽ xuất hiện ở đây.</span><time>Hôm nay</time></article>';
+    }
+    function runQuickAction(action){
+      const input=$('#captureInput'),text=input.value.trim();if(!text){input.focus();toast('Nhập nội dung trước nhé.');return}
+      if(action==='task'){data.tasks.push({text,done:false});toast('Đã thêm nhiệm vụ.')} 
+      else if(action==='activity'){data.notes.push({text,at:Date.now()});toast('Đã ghi lại hoạt động.')} 
+      else if(action==='savings'){
+        const amount=Number(text.replace(/\D/g,''));if(!Number.isFinite(amount)||amount<=0){toast('Nhập số tiền tiết kiệm bằng VNĐ.');return}
+        const metric=data.metrics.find(item=>item.name==='Tiết kiệm tiền')||data.metrics[2],current=Number(String(metric.current).replace(/\D/g,''))||0;
+        metric.current=(current+amount).toLocaleString('vi-VN')+' VNĐ';data.notes.push({text:`Đã tiết kiệm thêm ${amount.toLocaleString('vi-VN')} VNĐ.`,at:Date.now()});toast('Đã cập nhật khoản tiết kiệm hôm nay.');
+      }
+      save();render();input.value='';
+    }
+    $('#captureForm').addEventListener('submit',e=>{e.preventDefault();runQuickAction('activity')});
+    $('#captureForm').addEventListener('click',e=>{const action=e.target.closest('[data-quick-action]')?.dataset.quickAction;if(action)runQuickAction(action)});
+    $('#captureInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();runQuickAction('activity')}});
+    $('#taskForm').addEventListener('submit',e=>{e.preventDefault();const input=$('#taskInput'),text=input.value.trim();if(!text)return;data.tasks.push({text,done:false});save();render();input.value='';toast('Đã thêm việc cần làm.')});
+    $('#taskList').addEventListener('change',e=>{const i=Number(e.target.dataset.task);if(Number.isInteger(i)&&data.tasks[i]){data.tasks[i].done=e.target.checked;save();render()}});
+    $('#moduleGrid').addEventListener('change',e=>{const id=e.target.dataset.moduleTask;if(!id)return;const item=data.moduleTasks.find(task=>task.id===id);if(item){item.done=e.target.checked;save();render()}});
+    $('#coreGrid').addEventListener('click',e=>{const edit=e.target.closest('[data-edit-metric]');if(edit){$('#coreGrid').dataset.editing=edit.dataset.editMetric;renderMetrics();$('#coreGrid').querySelector('input[name="name"]').focus();return}if(e.target.closest('[data-cancel-metric]')){$('#coreGrid').dataset.editing='';renderMetrics()}});
+    $('#coreGrid').addEventListener('submit',e=>{const form=e.target.closest('[data-metric-form]');if(!form)return;e.preventDefault();const i=Number(form.dataset.metricForm),fields=new FormData(form);data.metrics[i]={name:String(fields.get('name')||'').trim(),current:String(fields.get('current')||'').trim(),target:String(fields.get('target')||'').trim(),description:String(fields.get('description')||'').trim()};save();$('#coreGrid').dataset.editing='';renderMetrics();toast('Đã lưu chỉ số.')});
+    $('#searchButton').addEventListener('click',()=>{$('#captureInput').focus();toast('Tìm trong không gian của bạn bằng ô ghi nhanh.')});$('#helpButton').addEventListener('click',()=>toast('Bắt đầu bằng một việc nhỏ hoặc một dòng ghi chú.'));
+    $('#menuButton').addEventListener('click',()=>$('#sidebar').classList.toggle('open'));$$('.nav a').forEach(a=>a.addEventListener('click',()=>{$$('.nav a').forEach(n=>n.classList.remove('active'));a.classList.add('active');$('#sidebar').classList.remove('open')}));
+    render();
+  </script>
+</body>
+</html>
