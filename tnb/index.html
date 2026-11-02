@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a18">
+  <meta name="description" content="Giới thiệu Agent Tin Nổi Bật: quy trình xử lý nguồn âm thanh, video và bài viết thành báo cáo tiếng Việt có dẫn nguồn. Đây là trang trưng bày, không gọi Agent thật.">
+  <title>Tin Nổi Bật — Agent nghiên cứu và tổng hợp tin</title>
+  <style>
+    :root{--ink:#101a18;--muted:#63716c;--paper:#f4f3ed;--white:#fffefa;--green:#b8f36b;--green-dark:#23452e;--line:#dfe4d9;--orange:#f6a56f;--blue:#c8e4ff;--shadow:0 18px 50px #0c211015;--serif:Arial,'Segoe UI','Microsoft YaHei',sans-serif;--sans:Arial,'Segoe UI','Microsoft YaHei',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}a{color:inherit}button{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.eyebrow{display:flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:.13em;font-size:.73rem;font-weight:750}.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
+    .topbar{padding:21px 0;border-bottom:1px solid #ffffff2c;color:#fff}.topbar-inner{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;font-weight:750;letter-spacing:-.02em}.brand-mark{display:grid;place-items:center;width:33px;height:33px;border-radius:10px;background:var(--green);color:#14251a;font-size:1rem}.topnav{display:flex;gap:25px;font-size:.87rem;color:#c0cbc4}.topnav a{text-decoration:none}.topnav a:hover{color:white}
+    .hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding-bottom:75px}.hero:after{content:"";position:absolute;width:580px;height:580px;right:-80px;top:70px;border-radius:50%;background:radial-gradient(circle,#b8f36b20,transparent 68%);pointer-events:none}.hero-main{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center;padding:74px 0 46px}.hero .eyebrow{color:#bde98f}.hero h1{font-family:var(--serif);font-size:clamp(2.85rem,5.4vw,5.2rem);font-weight:500;line-height:.99;letter-spacing:-.055em;max-width:730px;margin:23px 0 24px}.hero h1 em{font-weight:500;color:var(--green)}.lede{max-width:660px;color:#c2ccc5;font-size:1.08rem;line-height:1.7;margin:0 0 28px}.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:13px 18px;border:1px solid transparent;border-radius:9px;text-decoration:none;font-weight:720;cursor:pointer;transition:transform .18s,background .18s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--green);color:#102015}.btn-ghost{color:#fff;border-color:#ffffff36;background:#ffffff08}.hero-note{font-size:.78rem;color:#aebbb2;margin-top:14px}.signal-card{position:relative;z-index:1;background:#ffffff0b;border:1px solid #ffffff20;border-radius:18px;padding:24px;box-shadow:0 25px 65px #0002;transform:rotate(1deg)}.signal-head{display:flex;justify-content:space-between;align-items:center;color:#ced8d0;font-size:.8rem}.live-pill{display:flex;align-items:center;gap:7px;padding:5px 9px;border-radius:20px;background:#b8f36b1a;color:var(--green);font-weight:700;font-size:.72rem}.live-pill i{width:6px;height:6px;border-radius:50%;background:var(--green)}.signal-card h2{font:500 1.55rem var(--serif);margin:24px 0 7px}.signal-card>p{font-size:.85rem;color:#bec9c0;margin:0}.signal-line{height:1px;background:#ffffff20;margin:21px 0}.signal-meta{display:grid;grid-template-columns:1fr 1fr;gap:14px}.signal-meta small{display:block;text-transform:uppercase;letter-spacing:.1em;color:#8c9a90;font-size:.64rem}.signal-meta strong{display:block;color:#f4f7ef;font-size:.88rem;margin-top:4px}.source-tags{display:flex;gap:7px;margin-top:18px;flex-wrap:wrap}.tag{font-size:.71rem;color:#dce5dc;border:1px solid #ffffff26;border-radius:6px;padding:4px 8px}.hero-strip{position:relative;z-index:1;border-top:1px solid #ffffff20;padding-top:22px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:#aebbb2;font-size:.82rem}.hero-strip strong{color:#fff;font-weight:650}.strip-item{display:flex;align-items:center;gap:9px}.strip-dot{color:var(--green)}
+    main section{padding:86px 0}.section-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:37px}.section-top h2{font:500 clamp(2.1rem,4vw,3.4rem)/1.03 var(--serif);letter-spacing:-.04em;margin:14px 0 0;max-width:680px}.section-top p{max-width:390px;margin:0;color:var(--muted)}.section-top .eyebrow{color:var(--green-dark)}.intro-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:start}.intro-aside{position:sticky;top:25px}.intro-aside p{color:var(--muted);font-size:1.05rem}.quote-mark{font:5rem/.75 var(--serif);color:#9ecb6f;margin:20px 0}.plain-note{padding:16px 18px;background:#e9eddf;border-radius:10px;color:#4d5d4e;font-size:.86rem}.flow-list{border-top:1px solid var(--line)}.flow-step{display:grid;grid-template-columns:54px 1fr 24px;gap:17px;padding:20px 0;border-bottom:1px solid var(--line);align-items:start}.flow-num{font:1rem var(--serif);color:#7e8f7f;padding-top:2px}.flow-step h3{margin:0 0 5px;font-size:1rem}.flow-step p{margin:0;color:var(--muted);font-size:.9rem;max-width:600px}.flow-check{display:grid;place-items:center;width:23px;height:23px;border:1px solid #c8d6bd;border-radius:50%;color:#4c723f;font-size:.72rem;margin-top:1px}
+    .dark-section{background:#e9eee4}.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.proof-card{padding:22px;background:var(--white);border:1px solid var(--line);border-radius:13px;min-height:175px}.proof-card .icon{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;background:#eaf4df;color:#355c38;font-weight:800}.proof-card h3{font-size:1rem;margin:17px 0 7px}.proof-card p{font-size:.86rem;color:var(--muted);margin:0}.standard{margin-top:20px;background:var(--ink);color:white;padding:25px 28px;border-radius:13px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.standard h3{font:500 1.65rem var(--serif);margin:0}.standard p{color:#c2cec3;margin:0;font-size:.9rem}.standard b{color:var(--green)}
+    .demo-section{background:#f9f8f2}.demo-shell{display:grid;grid-template-columns:.78fr 1.22fr;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--white);box-shadow:var(--shadow)}.demo-sidebar{padding:28px;background:#edf1e7}.demo-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#536650}.demo-sidebar h3{font:500 1.8rem/1.14 var(--serif);margin:15px 0}.demo-sidebar p{font-size:.9rem;color:var(--muted)}.demo-option{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-top:1px solid #d7dfd2;font-size:.84rem}.demo-option span:last-child{font-weight:700;color:#497045}.demo-content{padding:30px}.sim-banner{display:flex;gap:10px;align-items:center;background:#fff0df;color:#744721;border:1px solid #f0d5b4;padding:11px 13px;border-radius:8px;font-weight:750;font-size:.79rem}.sim-banner .mark{font-size:1rem}.demo-content h3{font:500 1.8rem var(--serif);margin:23px 0 5px}.demo-sub{color:var(--muted);font-size:.82rem;margin:0 0 20px}.demo-report{border-top:1px solid var(--line);padding-top:18px}.demo-report h4{font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 7px;color:#536650}.demo-report p{margin:0 0 17px;font-size:.9rem;color:#3d4941}.citation{border:1px dashed #b4c4ae;border-radius:8px;padding:11px 13px;color:#6c786d;font-size:.78rem}.demo-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:18px;font-size:.78rem;color:#768076}.demo-foot button{border:0;background:var(--ink);color:#fff;border-radius:7px;padding:9px 12px;font-weight:700;cursor:pointer}.demo-foot button:hover{background:#294235}.demo-count{font-variant-numeric:tabular-nums}
+    .boundaries{background:var(--ink);color:white}.boundaries .section-top .eyebrow{color:var(--green)}.boundaries .section-top p{color:#b6c2b9}.boundary-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.boundary-col{border-top:1px solid #ffffff2a;padding-top:18px}.boundary-col h3{font:500 1.55rem var(--serif);margin:0 0 15px}.boundary-col ul{padding:0;margin:0;list-style:none}.boundary-col li{padding:12px 0;border-top:1px solid #ffffff15;color:#c2ccc4;font-size:.92rem;display:flex;gap:11px}.boundary-col li:before{content:"+";color:var(--green);font-weight:800}.boundary-col.limit li:before{content:"—";color:var(--orange)}.boundary-foot{margin-top:27px;border:1px solid #ffffff24;border-radius:10px;padding:16px 18px;color:#d5ded6;font-size:.86rem}.boundary-foot strong{color:var(--green)}
+    .closing{background:#b8f36b;padding:51px 0}.closing-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}.closing h2{font:500 clamp(1.9rem,3.5vw,2.8rem)/1.05 var(--serif);letter-spacing:-.035em;margin:0;max-width:650px}.closing p{margin:10px 0 0;color:#3f5a3b}.closing .btn{background:var(--ink);color:#fff;white-space:nowrap}.footer{background:var(--ink);color:#aebbb1;padding:23px 0;font-size:.76rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;align-items:center}.footer strong{color:#fff}.footer p{margin:0}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:820px){.hero-main{grid-template-columns:1fr;gap:33px;padding-top:58px}.signal-card{max-width:560px;transform:none}.hero-strip{flex-wrap:wrap;justify-content:flex-start}.intro-grid{grid-template-columns:1fr;gap:25px}.intro-aside{position:static}.section-top{display:block}.section-top>p{margin-top:16px}.demo-shell{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr 1fr}.standard{grid-template-columns:1fr;gap:12px}.closing-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:540px){.wrap{width:min(100% - 28px,1160px)}.topnav{gap:13px;font-size:.75rem}.topnav a:nth-child(2){display:none}.hero-main{padding-top:45px}.hero h1{font-size:3.1rem}.hero{padding-bottom:44px}.hero-strip{display:grid;grid-template-columns:1fr 1fr}.hero-strip .strip-item:last-child{grid-column:1/-1}main section{padding:62px 0}.proof-grid{grid-template-columns:1fr}.proof-card{min-height:0}.demo-sidebar,.demo-content{padding:22px}.boundary-grid{grid-template-columns:1fr;gap:26px}.footer-inner{align-items:flex-start;flex-direction:column}.flow-step{grid-template-columns:33px 1fr 24px;gap:12px}}
+    .language-control{display:flex;align-items:center}.language-control select{appearance:none;background:#ffffff0b;color:#eef4ec;border:1px solid #ffffff39;border-radius:7px;padding:8px 27px 8px 10px;font:600 .78rem var(--sans);cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,#c7d4c9 50%),linear-gradient(135deg,#c7d4c9 50%,transparent 50%);background-position:calc(100% - 13px) 50%,calc(100% - 9px) 50%;background-size:4px 4px,4px 4px;background-repeat:no-repeat}.language-control option{color:#102015;background:#fff}.hero h1,.section-top h2,.signal-card h2,.standard h3,.demo-sidebar h3,.demo-content h3,.boundary-col h3,.closing h2{letter-spacing:normal;font-kerning:none;font-feature-settings:"kern" 0}.hero h1{font-family:var(--sans);font-weight:750;line-height:1.08;letter-spacing:normal}.hero h1 em{font-weight:750}@media(max-width:540px){.topbar-inner{gap:10px}.topnav{gap:8px}.language-control select{padding:7px 24px 7px 8px;font-size:.72rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="topbar" aria-label="Điều hướng chính"><div class="wrap topbar-inner"><a class="brand" href="#top" aria-label="Tin Nổi Bật, đầu trang"><span class="brand-mark" aria-hidden="true">TN</span><span>Tin Nổi Bật <span style="color:#9cad9f;font-weight:500">/ Agent</span></span></a><div class="topnav"><a href="#quy-trinh">Quy trình</a><a href="#tieu-chuan">Tiêu chuẩn</a><a href="#gioi-han">Giới hạn</a><label class="language-control"><span class="sr-only">Ngôn ngữ</span><select id="language-switcher" aria-label="Chọn ngôn ngữ"><option value="vi">Tiếng Việt</option><option value="en">English</option><option value="zh">中文</option></select></label></div></div></nav>
+    <div class="wrap hero-main"><div><div class="eyebrow">Agent nghiên cứu & tổng hợp tin</div><h1>Từ nhiều nguồn<br>đến một bản tin<br><em>có thể kiểm chứng.</em></h1><p class="lede">Tin Nổi Bật giúp xử lý bài viết, đường dẫn và nội dung âm thanh/video thành báo cáo tiếng Việt có phân loại, tóm tắt và dẫn nguồn để người đọc tự kiểm tra.</p><div class="hero-actions"><a class="btn btn-primary" href="#demo">Xem bản demo mô phỏng <span aria-hidden="true">↓</span></a><a class="btn btn-ghost" href="#quy-trinh">Khám phá cách làm <span aria-hidden="true">↗</span></a></div><p class="hero-note">Trang trưng bày công khai · Demo dùng dữ liệu minh họa · Không gọi Agent thật</p></div>
+      <article class="signal-card" aria-label="Tóm tắt vai trò Agent"><div class="signal-head"><span>HỒ SƠ NĂNG LỰC</span><span class="live-pill"><i></i> BẢN GIỚI THIỆU</span></div><h2>Một bản tóm lược, nhiều góc kiểm chứng.</h2><p>Quy trình được thiết kế để giữ lại điều quan trọng và làm rõ điều chưa chắc chắn.</p><div class="signal-line"></div><div class="signal-meta"><div><small>Đầu vào</small><strong>URL · MP3 · MP4</strong></div><div><small>Đầu ra</small><strong>Báo cáo Word tiếng Việt</strong></div></div><div class="source-tags"><span class="tag">Nguồn có thể truy cập</span><span class="tag">Đối chiếu độc lập</span><span class="tag">Không suy đoán</span></div></article>
+    </div>
+    <div class="wrap hero-strip"><div class="strip-item"><span class="strip-dot">●</span><span><strong>Đầu vào thường gặp:</strong> khoảng 3 nguồn/tệp mỗi lượt</span></div><div class="strip-item"><span class="strip-dot">●</span><span><strong>Ngôn ngữ báo cáo:</strong> tiếng Việt</span></div><div class="strip-item"><span class="strip-dot">●</span><span><strong>Ưu tiên:</strong> tin nổi bật, nguồn rõ ràng</span></div></div>
+  </header>
+  <main>
+    <section id="quy-trinh"><div class="wrap"><div class="section-top"><div><div class="eyebrow">Từ nguyên liệu đến báo cáo</div><h2>Không chỉ tóm tắt.<br>Còn phải biết điều gì đáng tin.</h2></div><p>Agent đi qua các bước kiểm tra trước khi chọn tin và viết báo cáo. Khi bằng chứng chưa đủ, nó giữ nguyên mức độ chưa chắc chắn.</p></div><div class="intro-grid"><aside class="intro-aside"><div class="quote-mark" aria-hidden="true">“</div><p>Mục tiêu là tạo ra một bản tin ngắn gọn, có ích và có đường dẫn để kiểm chứng — không biến phỏng đoán thành sự thật.</p><div class="plain-note"><strong>Đầu vào:</strong> liên kết trang web, tệp MP3/MP4 hoặc nội dung âm thanh/video mà người dùng cung cấp. Thường xử lý khoảng 3 nguồn hoặc tệp mỗi lượt.</div></aside><div class="flow-list"><article class="flow-step"><div class="flow-num">01</div><div><h3>Trích xuất và nhận diện vấn đề</h3><p>Đọc nội dung nguồn hoặc chuyển âm thanh/video thành văn bản; xác định chủ đề, sự kiện trung tâm và thông tin còn thiếu.</p></div><div class="flow-check" aria-hidden="true">✓</div></article><article class="flow-step"><div class="flow-num">02</div><div><h3>Kiểm tra chất lượng đầu vào</h3><p>Kiểm tra khả năng truy cập, độ đầy đủ, thời điểm và mức độ liên quan. Đánh dấu đoạn nghe/đọc không rõ, không tự điền nội dung.</p></div><div class="flow-check" aria-hidden="true">✓</div></article><article class="flow-step"><div class="flow-num">03</div><div><h3>Đối chiếu trước khi kết luận</h3><p>Ưu tiên nguồn chính thống, tìm nguồn độc lập bổ sung và so sánh các chi tiết cốt lõi như tên riêng, số liệu, thời gian và diễn biến.</p></div><div class="flow-check" aria-hidden="true">✓</div></article><article class="flow-step"><div class="flow-num">04</div><div><h3>Chọn tin và loại trùng lặp</h3><p>Xếp theo mức độ ảnh hưởng, tính cấp thiết, độ mới, độ tin cậy và giá trị thông tin; gộp tin cùng sự kiện nếu không có diễn biến mới.</p></div><div class="flow-check" aria-hidden="true">✓</div></article><article class="flow-step"><div class="flow-num">05</div><div><h3>Viết báo cáo có nguồn</h3><p>Tóm tắt bằng tiếng Việt, giữ ý chính và số liệu quan trọng; phân loại theo chủ đề, kèm thông tin nguồn và liên kết trực tiếp.</p></div><div class="flow-check" aria-hidden="true">✓</div></article><article class="flow-step"><div class="flow-num">06</div><div><h3>Tự kiểm tra trước khi hoàn tất</h3><p>Rà lại độ chính xác, tính nhất quán, trích dẫn, trùng lặp và định dạng. Nội dung chưa xác minh được sẽ được ghi rõ hoặc loại khỏi báo cáo chính.</p></div><div class="flow-check" aria-hidden="true">✓</div></article></div></div></div></section>
+    <section class="dark-section" id="tieu-chuan"><div class="wrap"><div class="section-top"><div><div class="eyebrow">Tiêu chuẩn chất lượng</div><h2>Để người đọc có thể lần ngược về nguồn.</h2></div><p>Mỗi tiêu chuẩn gắn với một việc kiểm tra cụ thể. Nguồn và giới hạn bằng chứng luôn đi cùng phần tóm tắt.</p></div><div class="proof-grid"><article class="proof-card"><div class="icon">01</div><h3>Đối chiếu độc lập</h3><p>Tối thiểu 2 nguồn độc lập cho thông tin chính; ưu tiên từ 3 nguồn trở lên với tin quan trọng hoặc nhạy cảm.</p></article><article class="proof-card"><div class="icon">02</div><h3>Giữ nguyên mức chắc chắn</h3><p>Nếu nguồn mâu thuẫn, nêu rõ điểm khác nhau và nguồn tương ứng. Không tự chọn số liệu để tạo một kết luận.</p></article><article class="proof-card"><div class="icon">03</div><h3>Dẫn nguồn có thể kiểm tra</h3><p>Ghi tên nguồn, tiêu đề, tác giả và ngày đăng nếu có; kèm URL trực tiếp và nguồn đối chiếu.</p></article><article class="proof-card"><div class="icon">04</div><h3>Giữ đúng ngữ cảnh</h3><p>Tóm tắt ai, việc gì, ở đâu, khi nào và kết quả ra sao; không thêm dữ kiện ngoài nguồn đã kiểm chứng.</p></article><article class="proof-card"><div class="icon">05</div><h3>Phân loại theo nội dung</h3><p>Chọn một chủ đề chính dựa trên vấn đề trung tâm; ghi nhận chủ đề phụ khi chúng thực sự giúp hiểu tin.</p></article><article class="proof-card"><div class="icon">06</div><h3>Tách riêng tin cần theo dõi</h3><p>Tin mới, cấp thiết nhưng chưa xác minh chỉ có thể nằm ở mục riêng kèm cảnh báo; không dùng làm căn cứ kết luận.</p></article></div><div class="standard"><h3>Không đủ bằng chứng?<br>Không khẳng định.</h3><p>Nếu tin chưa xác minh nhưng đáng theo dõi, báo cáo sẽ <b>gắn nhãn rõ ràng</b>. Nếu thiếu nguồn hoặc có dấu hiệu sai lệch, tin sẽ không được đưa vào phần tin chính.</p></div></div></section>
+    <section class="demo-section" id="demo"><div class="wrap"><div class="section-top"><div><div class="eyebrow">Trải nghiệm mẫu</div><h2>Hình dung báo cáo sẽ được tổ chức ra sao.</h2></div><p>Nhấn nút để xem một mẫu cấu trúc minh họa. Phần dưới đây không chứa tin thật và không phải kết quả xử lý từ Agent.</p></div><div class="demo-shell"><aside class="demo-sidebar"><div class="demo-label">Mẫu trình bày</div><h3>Một tin.<br>Các lớp kiểm tra.</h3><p>Ví dụ chỉ minh họa cách báo cáo trình bày nguồn, thông tin chính và trạng thái xác minh.</p><div class="demo-option"><span>Chủ đề</span><span>Giả lập</span></div><div class="demo-option"><span>Nguồn đối chiếu</span><span>Chỗ điền</span></div><div class="demo-option"><span>Trạng thái</span><span>Minh họa</span></div></aside><div class="demo-content" aria-live="polite"><div class="sim-banner"><span class="mark" aria-hidden="true">◇</span><span id="demo-status">MẪU DEMO MÔ PHỎNG — KHÔNG PHẢI TIN THẬT</span></div><h3 id="demo-title">[Tiêu đề tin đã được xác minh]</h3><p class="demo-sub" id="demo-meta">Chủ đề: [Chủ đề] &nbsp;·&nbsp; Mức xác minh: [Đã đối chiếu nguồn]</p><div class="demo-report"><h4>Tóm tắt</h4><p id="demo-summary">[Nêu sự kiện chính, thời gian, địa điểm và số liệu quan trọng dựa trên các nguồn đã kiểm tra. Không bổ sung chi tiết chưa có bằng chứng.]</p><h4>Nguồn tham khảo</h4><div class="citation" id="demo-citation">[Tên nguồn · Tiêu đề gốc · Tác giả/ngày đăng nếu có · URL trực tiếp] &nbsp; + &nbsp; [Nguồn độc lập đối chiếu]</div></div><div class="demo-foot"><span id="demo-footnote">Toàn bộ chữ trong ngoặc vuông là chỗ trống minh họa.</span><button id="next-demo" type="button" aria-label="Chuyển giữa các mẫu minh họa">Xem cách ghi tin chưa xác minh ↗</button></div></div></div></div></section>
+    <section class="boundaries" id="gioi-han"><div class="wrap"><div class="section-top"><div><div class="eyebrow">Phạm vi và giới hạn</div><h2>Hữu ích trong phạm vi rõ ràng.</h2></div><p>Trang này chỉ giới thiệu thiết kế và quy tắc của Agent. Nó không phải cổng truy cập vào Agent hay dữ liệu của chủ sở hữu.</p></div><div class="boundary-grid"><article class="boundary-col"><h3>Agent được thiết kế để</h3><ul><li>Tổng hợp nội dung từ các URL và tệp âm thanh/video được cung cấp.</li><li>Lọc, phân loại, tóm tắt tin nổi bật bằng tiếng Việt.</li><li>Trích dẫn nguồn và nêu rõ chỗ thiếu dữ liệu hoặc có mâu thuẫn.</li><li>Tạo báo cáo Word để người dùng xem xét.</li></ul></article><article class="boundary-col limit"><h3>Không làm trên trang công khai này</h3><ul><li>Không nhận tệp tải lên, URL đầu vào hay yêu cầu xử lý.</li><li>Không kết nối Hermes, Lark, API, tài khoản hoặc dữ liệu riêng.</li><li>Không cho khách truy cập gọi, điều khiển hay nhắn tin với Agent.</li><li>Không tự đăng báo cáo, chia sẻ tệp hoặc khẳng định tin chưa xác minh.</li></ul></article></div><div class="boundary-foot"><strong>Khi cần người kiểm tra:</strong> âm thanh/văn bản không rõ; tên riêng, số liệu hoặc thời gian chưa chắc chắn; các nguồn mâu thuẫn; hoặc tin có ảnh hưởng lớn chưa đủ bằng chứng.</div></div></section>
+    <section class="closing"><div class="wrap closing-inner"><div><h2>Một bản tóm tắt tốt phải chỉ ra được nó dựa vào đâu.</h2><p>Đây là trang giới thiệu tĩnh, chỉ để tìm hiểu cách Agent được thiết kế.</p></div><a class="btn" href="#top">Trở lại đầu trang ↑</a></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><p><strong>Tin Nổi Bật · Agent Showcase</strong> — trang giới thiệu công khai</p><p>Demo mô phỏng · Không gọi Agent thật · Không kết nối dữ liệu</p></div></footer>
+  <script>
+    const words = {
+      "Tiếng Việt":["Vietnamese","Tiếng Việt"],
+      "Ngôn ngữ":["Language","语言"],
+      "khoảng 3 nguồn/tệp mỗi lượt":["about 3 sources/files per run","每轮约 3 个来源/文件"],
+      "tiếng Việt":["Vietnamese","越南语"],
+      "tin nổi bật, nguồn rõ ràng":["notable stories with clear sources","热点新闻与清晰来源"],
+      "Chủ đề: [Chủ đề]  ·  Mức xác minh: [Đã đối chiếu nguồn]":["Topic: [Topic] · Verification: [Cross-checked sources]","主题：[主题] · 核验状态：[已交叉核验来源]"],
+      "[Tên nguồn · Tiêu đề gốc · Tác giả/ngày đăng nếu có · URL trực tiếp]   +   [Nguồn độc lập đối chiếu]":["[Source · Original title · Author/date if available · Direct URL] + [Independent corroborating source]","[来源 · 原标题 · 作者/发布日期（如有）· 直达链接] + [独立交叉核验来源]"],
+      "— trang giới thiệu công khai":["— public overview","— 公开介绍"],
+      "Quy trình":["Workflow","工作流程"],
+      "Tiêu chuẩn":["Standards","标准"],
+      "Giới hạn":["Boundaries","能力边界"],
+      "Agent nghiên cứu & tổng hợp tin":["News research & briefing agent","新闻研究与简报 Agent"],
+      "Từ nhiều nguồn":["From many sources","汇集多方来源"],
+      "đến một bản tin":["to one clear briefing","形成一份清晰简报"],
+      "có thể kiểm chứng.":["you can verify.","每条都可核验。"],
+      "Tin Nổi Bật giúp xử lý bài viết, đường dẫn và nội dung âm thanh/video thành báo cáo tiếng Việt có phân loại, tóm tắt và dẫn nguồn để người đọc tự kiểm tra.":["Tin Nổi Bật turns articles, links, and audio/video into a Vietnamese report with organized topics, concise summaries, and sources readers can check.","Tin Nổi Bật 可将文章、链接和音视频整理成越南语报告，按主题分类、简明总结并附上可核验的来源。"],
+      "Xem bản demo mô phỏng":["View the simulated demo","查看模拟演示"],
+      "Khám phá cách làm":["Explore the workflow","了解工作流程"],
+      "Trang trưng bày công khai · Demo dùng dữ liệu minh họa · Không gọi Agent thật":["Public showcase · Illustrative demo only · Does not call the live Agent","公开展示页 · 仅为示例演示 · 不会调用真实 Agent"],
+      "HỒ SƠ NĂNG LỰC":["CAPABILITY PROFILE","能力概览"],
+      "BẢN GIỚI THIỆU":["SHOWCASE","展示页面"],
+      "Một bản tóm lược, nhiều góc kiểm chứng.":["One briefing, checked from multiple angles.","一份简报，多角度核验。"],
+      "Quy trình được thiết kế để giữ lại điều quan trọng và làm rõ điều chưa chắc chắn.":["The workflow preserves what matters and makes uncertainty visible.","流程旨在保留关键信息，并明确标出不确定之处。"],
+      "Đầu vào":["INPUT","输入"],
+      "URL · MP3 · MP4":["URLs · MP3 · MP4","网址 · MP3 · MP4"],
+      "Đầu ra":["OUTPUT","输出"],
+      "Báo cáo Word tiếng Việt":["Vietnamese Word report","越南语 Word 报告"],
+      "Nguồn có thể truy cập":["Accessible sources","可访问来源"],
+      "Đối chiếu độc lập":["Independent cross-checks","独立交叉核验"],
+      "Không suy đoán":["No guessing","不作猜测"],
+      "Đầu vào thường gặp:":["Typical input:","常见输入："],
+      " khoảng 3 nguồn/tệp mỗi lượt":[" around 3 sources/files per run"," 每轮约 3 个来源/文件"],
+      "Ngôn ngữ báo cáo:":["Report language:","报告语言："],
+      " tiếng Việt":[" Vietnamese"," 越南语"],
+      "Ưu tiên:":["Priority:","优先："],
+      " tin nổi bật, nguồn rõ ràng":[" notable stories with clear sources"," 热点新闻与清晰来源"],
+      "Từ nguyên liệu đến báo cáo":["FROM INPUT TO REPORT","从素材到报告"],
+      "Không chỉ tóm tắt.":["More than a summary.","不只是摘要。"],
+      "Còn phải biết điều gì đáng tin.":["It also checks what is trustworthy.","还要判断哪些信息可信。"],
+      "Agent đi qua các bước kiểm tra trước khi chọn tin và viết báo cáo. Khi bằng chứng chưa đủ, nó giữ nguyên mức độ chưa chắc chắn.":["The Agent checks sources before selecting stories and writing. When evidence is incomplete, it preserves that uncertainty.","Agent 会先核验来源，再筛选新闻并撰写报告。证据不足时，会保留不确定性。"],
+      "Mục tiêu là tạo ra một bản tin ngắn gọn, có ích và có đường dẫn để kiểm chứng — không biến phỏng đoán thành sự thật.":["The goal is a useful, concise briefing with links readers can verify—not guesses presented as facts.","目标是提供简明实用、可追溯来源的简报，而不是把猜测当成事实。"],
+      "Đầu vào:":["Input:","输入："],
+      "liên kết trang web, tệp MP3/MP4 hoặc nội dung âm thanh/video mà người dùng cung cấp. Thường xử lý khoảng 3 nguồn hoặc tệp mỗi lượt.":["web links, MP3/MP4 files, or user-provided audio/video. Usually about three sources or files per run.","网页链接、MP3/MP4 文件或用户提供的音视频。通常每轮处理约 3 个来源或文件。"],
+      "Trích xuất và nhận diện vấn đề":["Extract and identify the subject","提取内容并识别议题"],
+      "Đọc nội dung nguồn hoặc chuyển âm thanh/video thành văn bản; xác định chủ đề, sự kiện trung tâm và thông tin còn thiếu.":["Read source material or transcribe audio/video; identify topics, the central event, and missing details.","读取来源内容或转录音视频；识别主题、核心事件和缺失信息。"],
+      "Kiểm tra chất lượng đầu vào":["Check input quality","检查输入质量"],
+      "Kiểm tra khả năng truy cập, độ đầy đủ, thời điểm và mức độ liên quan. Đánh dấu đoạn nghe/đọc không rõ, không tự điền nội dung.":["Check accessibility, completeness, timing, and relevance. Mark unclear passages instead of filling them in.","检查可访问性、完整性、时间和相关性。标记不清楚的内容，不自行补全。"],
+      "Đối chiếu trước khi kết luận":["Cross-check before concluding","结论前进行交叉核验"],
+      "Ưu tiên nguồn chính thống, tìm nguồn độc lập bổ sung và so sánh các chi tiết cốt lõi như tên riêng, số liệu, thời gian và diễn biến.":["Prioritize authoritative sources, seek independent corroboration, and compare names, figures, dates, and developments.","优先采用权威来源，寻找独立佐证，并比较专有名词、数字、日期和事件进展。"],
+      "Chọn tin và loại trùng lặp":["Select stories and remove duplicates","筛选新闻并去重"],
+      "Xếp theo mức độ ảnh hưởng, tính cấp thiết, độ mới, độ tin cậy và giá trị thông tin; gộp tin cùng sự kiện nếu không có diễn biến mới.":["Rank by impact, urgency, recency, reliability, and information value; combine coverage of the same event unless there is a meaningful update.","按影响、紧迫性、新近程度、可靠性和信息价值排序；同一事件若无重要进展则合并报道。"],
+      "Viết báo cáo có nguồn":["Write a sourced report","撰写带来源的报告"],
+      "Tóm tắt bằng tiếng Việt, giữ ý chính và số liệu quan trọng; phân loại theo chủ đề, kèm thông tin nguồn và liên kết trực tiếp.":["Summarize in Vietnamese, preserve key points and figures, organize by topic, and include source details and direct links.","用越南语总结，保留重点和重要数字，按主题分类，并附来源信息和直达链接。"],
+      "Tự kiểm tra trước khi hoàn tất":["Run final quality checks","完成前进行自检"],
+      "Rà lại độ chính xác, tính nhất quán, trích dẫn, trùng lặp và định dạng. Nội dung chưa xác minh được sẽ được ghi rõ hoặc loại khỏi báo cáo chính.":["Review accuracy, consistency, citations, duplication, and formatting. Unverified items are labeled or excluded from the main report.","复核准确性、一致性、引用、重复内容和格式。未核实的信息会明确标注或不纳入主要报告。"],
+      "Tiêu chuẩn chất lượng":["QUALITY STANDARDS","质量标准"],
+      "Để người đọc có thể lần ngược về nguồn.":["Every reader can trace a claim back to its source.","让读者能够追溯信息来源。"],
+      "Mỗi tiêu chuẩn gắn với một việc kiểm tra cụ thể. Nguồn và giới hạn bằng chứng luôn đi cùng phần tóm tắt.":["Each standard maps to a concrete check. Sources and evidence limits stay with the summary.","每项标准都对应具体检查。摘要会同时说明来源和证据局限。"],
+      "Tối thiểu 2 nguồn độc lập cho thông tin chính; ưu tiên từ 3 nguồn trở lên với tin quan trọng hoặc nhạy cảm.":["At least two independent sources for key claims; preferably three or more for major or sensitive stories.","关键信息至少核对两个独立来源；重大或敏感新闻尽量核对三个或更多来源。"],
+      "Giữ nguyên mức chắc chắn":["Preserve uncertainty","保留不确定性"],
+      "Nếu nguồn mâu thuẫn, nêu rõ điểm khác nhau và nguồn tương ứng. Không tự chọn số liệu để tạo một kết luận.":["When sources conflict, show the differences and identify each source. Never choose figures just to force a conclusion.","来源冲突时，说明差异并标明各自来源。不得为了得出结论而擅自选择数字。"],
+      "Dẫn nguồn có thể kiểm tra":["Traceable citations","可核验的引用"],
+      "Ghi tên nguồn, tiêu đề, tác giả và ngày đăng nếu có; kèm URL trực tiếp và nguồn đối chiếu.":["Include the source name, title, author and publication date when available, plus a direct URL and corroborating sources.","提供来源名称、标题、作者和发布日期（如有），并附直接链接及交叉核验来源。"],
+      "Giữ đúng ngữ cảnh":["Keep the context intact","保持语境准确"],
+      "Tóm tắt ai, việc gì, ở đâu, khi nào và kết quả ra sao; không thêm dữ kiện ngoài nguồn đã kiểm chứng.":["Cover who, what, where, when, and the outcome without adding facts beyond verified sources.","说明人物、事件、地点、时间和结果，不添加已核实来源之外的事实。"],
+      "Phân loại theo nội dung":["Classify by substance","按内容分类"],
+      "Chọn một chủ đề chính dựa trên vấn đề trung tâm; ghi nhận chủ đề phụ khi chúng thực sự giúp hiểu tin.":["Choose the main topic based on the central issue; include secondary topics only when they clarify the story.","根据核心议题选择主要主题；仅在有助于理解新闻时记录次要主题。"],
+      "Tách riêng tin cần theo dõi":["Separate developing stories","单独列出待跟进新闻"],
+      "Tin mới, cấp thiết nhưng chưa xác minh chỉ có thể nằm ở mục riêng kèm cảnh báo; không dùng làm căn cứ kết luận.":["New, urgent but unverified items may appear only in a clearly labeled watchlist—not as the basis for conclusions.","新近且紧急但尚未核实的信息，只能在明确标注的跟进栏目中出现，不可作为结论依据。"],
+      "Không đủ bằng chứng?":["Not enough evidence?","证据不足？"],
+      "Không khẳng định.":["Do not claim certainty.","不要断言。"],
+      "Nếu tin chưa xác minh nhưng đáng theo dõi, báo cáo sẽ":["If an unverified story merits monitoring, the report will","如果未核实的新闻值得跟进，报告会"],
+      "gắn nhãn rõ ràng":["label it clearly","明确标注"],
+      ". Nếu thiếu nguồn hoặc có dấu hiệu sai lệch, tin sẽ không được đưa vào phần tin chính.":[". Stories without sources or with signs of distortion are kept out of the main briefing.","。缺少来源或疑似失真的内容不会进入主要简报。"],
+      "Trải nghiệm mẫu":["SAMPLE EXPERIENCE","示例体验"],
+      "Hình dung báo cáo sẽ được tổ chức ra sao.":["See how a report is structured.","了解报告的组织方式。"],
+      "Nhấn nút để xem một mẫu cấu trúc minh họa. Phần dưới đây không chứa tin thật và không phải kết quả xử lý từ Agent.":["Use the button to switch between illustrative report formats. Nothing below is real news or output from the Agent.","点击按钮切换示例报告格式。以下内容不是真实新闻，也不是 Agent 的实际处理结果。"],
+      "Mẫu trình bày":["REPORT EXAMPLE","报告示例"],
+      "Một tin.":["One story.","一条新闻。"],
+      "Các lớp kiểm tra.":["Several layers of checks.","多层核验。"],
+      "Ví dụ chỉ minh họa cách báo cáo trình bày nguồn, thông tin chính và trạng thái xác minh.":["This example only illustrates how a report presents sources, key facts, and verification status.","此示例仅展示报告如何呈现来源、关键信息和核验状态。"],
+      "Chủ đề":["Topic","主题"],
+      "Giả lập":["Illustrative","模拟"],
+      "Nguồn đối chiếu":["Corroborating sources","交叉核验来源"],
+      "Chỗ điền":["Placeholder","占位内容"],
+      "Trạng thái":["Status","状态"],
+      "Minh họa":["Example","示例"],
+      "MẪU DEMO MÔ PHỎNG — KHÔNG PHẢI TIN THẬT":["SIMULATED DEMO — NOT REAL NEWS","模拟演示 — 非真实新闻"],
+      "[Tiêu đề tin đã được xác minh]":["[Title of a verified story]","[已核实新闻标题]"],
+      "Chủ đề: [Chủ đề] · Mức xác minh: [Đã đối chiếu nguồn]":["Topic: [Topic] · Verification: [Cross-checked sources]","主题：[主题] · 核验状态：[已交叉核验来源]"],
+      "[Nêu sự kiện chính, thời gian, địa điểm và số liệu quan trọng dựa trên các nguồn đã kiểm tra. Không bổ sung chi tiết chưa có bằng chứng.]":["[State the main event, time, place, and key figures based on checked sources. Do not add unsupported details.]","[根据已核对的来源说明主要事件、时间、地点和重要数字。不得补充缺乏证据的细节。]"],
+      "Tóm tắt":["Summary","摘要"],
+      "Nguồn tham khảo":["Sources","参考来源"],
+      "[Tên nguồn · Tiêu đề gốc · Tác giả/ngày đăng nếu có · URL trực tiếp] + [Nguồn độc lập đối chiếu]":["[Source · Original title · Author/date if available · Direct URL] + [Independent corroborating source]","[来源 · 原标题 · 作者/发布日期（如有）· 直达链接] + [独立交叉核验来源]"],
+      "Toàn bộ chữ trong ngoặc vuông là chỗ trống minh họa.":["Bracketed text is illustrative placeholder copy.","方括号中的文字均为示例占位内容。"],
+      "Xem cách ghi tin chưa xác minh ↗":["See how an unverified item is labeled ↗","查看未核实信息的标注方式 ↗"],
+      "Phạm vi và giới hạn":["SCOPE & BOUNDARIES","范围与边界"],
+      "Hữu ích trong phạm vi rõ ràng.":["Useful within a clear scope.","在明确范围内提供帮助。"],
+      "Trang này chỉ giới thiệu thiết kế và quy tắc của Agent. Nó không phải cổng truy cập vào Agent hay dữ liệu của chủ sở hữu.":["This page presents the Agent’s design and rules only. It does not provide access to the Agent or its owner’s data.","本页面仅介绍 Agent 的设计和规则，不提供访问 Agent 或所有者数据的入口。"],
+      "Agent được thiết kế để":["Designed to","Agent 的设计用途"],
+      "Tổng hợp nội dung từ các URL và tệp âm thanh/video được cung cấp.":["Summarize content from supplied URLs and audio/video files.","汇总用户提供的网址和音视频文件内容。"],
+      "Lọc, phân loại, tóm tắt tin nổi bật bằng tiếng Việt.":["Select, classify, and summarize notable stories in Vietnamese.","用越南语筛选、分类和总结热点新闻。"],
+      "Trích dẫn nguồn và nêu rõ chỗ thiếu dữ liệu hoặc có mâu thuẫn.":["Cite sources and identify missing or conflicting information.","引用来源，并指出信息缺失或冲突之处。"],
+      "Tạo báo cáo Word để người dùng xem xét.":["Create a Word report for the user to review.","生成供用户审阅的 Word 报告。"],
+      "Không làm trên trang công khai này":["Not available on this public page","本公开页面不提供"],
+      "Không nhận tệp tải lên, URL đầu vào hay yêu cầu xử lý.":["No file uploads, input URLs, or processing requests are accepted.","不接受文件上传、输入网址或处理请求。"],
+      "Không kết nối Hermes, Lark, API, tài khoản hoặc dữ liệu riêng.":["No connection to Hermes, Lark, APIs, accounts, or private data.","不连接 Hermes、Lark、API、账户或私人数据。"],
+      "Không cho khách truy cập gọi, điều khiển hay nhắn tin với Agent.":["Visitors cannot invoke, control, or message the Agent.","访客无法调用、控制或向 Agent 发送消息。"],
+      "Không tự đăng báo cáo, chia sẻ tệp hoặc khẳng định tin chưa xác minh.":["It does not publish reports, share files, or present unverified stories as facts.","不会自动发布报告、分享文件或将未核实新闻说成事实。"],
+      "Khi cần người kiểm tra:":["Human review is needed when:","需要人工复核的情况："],
+      "âm thanh/văn bản không rõ; tên riêng, số liệu hoặc thời gian chưa chắc chắn; các nguồn mâu thuẫn; hoặc tin có ảnh hưởng lớn chưa đủ bằng chứng.":["audio or text is unclear; names, figures, or dates are uncertain; sources conflict; or a high-impact story lacks sufficient evidence.","音频或文本不清晰；专有名词、数字或日期不确定；来源相互矛盾；或重大新闻证据不足。"],
+      "Một bản tóm tắt tốt phải chỉ ra được nó dựa vào đâu.":["A good summary shows what it is based on.","好的摘要应说明依据来源。"],
+      "Đây là trang giới thiệu tĩnh, chỉ để tìm hiểu cách Agent được thiết kế.":["This is a static showcase for learning how the Agent is designed.","这是一个静态展示页，用于了解 Agent 的设计方式。"],
+      "Trở lại đầu trang ↑":["Back to top ↑","返回顶部 ↑"],
+      "Tin Nổi Bật · Agent Showcase — trang giới thiệu công khai":["Tin Nổi Bật · Agent Showcase — public overview","Tin Nổi Bật · Agent Showcase — 公开介绍"],
+      "Demo mô phỏng · Không gọi Agent thật · Không kết nối dữ liệu":["Simulated demo · No live Agent calls · No data connections","模拟演示 · 不调用真实 Agent · 不连接任何数据"]
+    };
+    const locales = {vi:"vi",en:"en",zh:"zh-CN"};
+    const originalText = new WeakMap();
+    const demoCopy = {
+      vi:[
+        ["[Tiêu đề tin đã được xác minh]","Chủ đề: [Chủ đề] · Mức xác minh: [Đã đối chiếu nguồn]","[Nêu sự kiện chính, thời gian, địa điểm và số liệu quan trọng dựa trên các nguồn đã kiểm tra. Không bổ sung chi tiết chưa có bằng chứng.]","[Tên nguồn · Tiêu đề gốc · Tác giả/ngày đăng nếu có · URL trực tiếp] + [Nguồn độc lập đối chiếu]","Toàn bộ chữ trong ngoặc vuông là chỗ trống minh họa.","Xem cách ghi tin chưa xác minh ↗","MẪU DEMO MÔ PHỎNG — KHÔNG PHẢI TIN THẬT"],
+        ["[Tin mới cần tiếp tục theo dõi]","Chủ đề: [Chủ đề] · Trạng thái: Chưa thống nhất / đang xác minh","[Thông tin mới được mô tả kèm cảnh báo. Ghi rõ chi tiết nào chưa được xác nhận; không trình bày như sự thật và không dùng làm căn cứ kết luận.]","[Nguồn A: nội dung được nêu] · [Nguồn B: điểm khác biệt] · [URL trực tiếp và thời điểm đăng nếu có]","Mẫu này cho thấy cách giữ rõ phần chưa chắc chắn.","Quay lại mẫu tin đã xác minh ↗","MẪU DEMO MÔ PHỎNG — CHƯA PHẢI TIN ĐÃ XÁC MINH"]
+      ],
+      en:[
+        ["[Title of a verified story]","Topic: [Topic] · Verification: [Cross-checked sources]","[State the main event, time, place, and key figures based on checked sources. Do not add unsupported details.]","[Source · Original title · Author/date if available · Direct URL] + [Independent corroborating source]","Bracketed text is illustrative placeholder copy.","See how an unverified item is labeled ↗","SIMULATED DEMO — NOT REAL NEWS"],
+        ["[Developing story to monitor]","Topic: [Topic] · Status: Sources differ / verification in progress","[Describe the new information with a clear warning. Identify what remains unconfirmed; do not present it as fact or use it to support a conclusion.]","[Source A: reported detail] · [Source B: discrepancy] · [Direct URL and publication time if available]","This example shows how uncertainty stays visible.","Return to the verified-story example ↗","SIMULATED DEMO — NOT YET VERIFIED"]
+      ],
+      zh:[
+        ["[已核实新闻标题]","主题：[主题] · 核验状态：[已交叉核验来源]","[根据已核对的来源说明主要事件、时间、地点和重要数字。不得补充缺乏证据的细节。]","[来源 · 原标题 · 作者/发布日期（如有）· 直达链接] + [独立交叉核验来源]","方括号中的文字均为示例占位内容。","查看未核实信息的标注方式 ↗","模拟演示 — 非真实新闻"],
+        ["[需要继续跟进的新闻]","主题：[主题] · 状态：来源不一致 / 正在核验","[附上明确警示，描述新信息并指出尚未确认的细节；不得将其作为事实陈述或结论依据。]","[来源 A：报道内容] · [来源 B：差异点] · [直达链接和发布时间（如有）]","此示例展示如何清楚保留不确定性。","返回已核实新闻示例 ↗","模拟演示 — 尚未核实"]
+      ]
+    };
+    let currentLanguage = "vi";
+    let currentSample = 0;
+    function applyDemo() {
+      const s = demoCopy[currentLanguage][currentSample];
+      const ids = ["demo-title","demo-meta","demo-summary","demo-citation","demo-footnote","next-demo","demo-status"];
+      ids.forEach((id, i) => { document.getElementById(id).textContent = s[i]; });
+    }
+    function setLanguage(language) {
+      currentLanguage = language;
+      document.documentElement.lang = locales[language];
+      document.title = language === "en" ? "Tin Nổi Bật — News Research Agent" : language === "zh" ? "Tin Nổi Bật — 新闻研究 Agent" : "Tin Nổi Bật — Agent nghiên cứu và tổng hợp tin";
+      const description = document.querySelector('meta[name="description"]');
+      description.content = language === "en" ? "Meet Tin Nổi Bật, a news research agent that turns articles and audio/video into a sourced Vietnamese report. This showcase does not call the live Agent." : language === "zh" ? "了解 Tin Nổi Bật 新闻研究 Agent：将文章和音视频整理为带来源的越南语报告。本展示页不会调用真实 Agent。" : "Giới thiệu Agent Tin Nổi Bật: quy trình xử lý nguồn âm thanh, video và bài viết thành báo cáo tiếng Việt có dẫn nguồn. Đây là trang trưng bày, không gọi Agent thật.";
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let node;
+      while ((node = walker.nextNode())) {
+        if (!originalText.has(node)) originalText.set(node, node.nodeValue);
+        const original = originalText.get(node);
+        const key = original.trim();
+        const entry = words[key];
+        if (entry) {
+          const value = language === "vi" ? key : entry[language === "en" ? 0 : 1];
+          const lead = original.match(/^\s*/)[0];
+          const tail = original.match(/\s*$/)[0];
+          node.nodeValue = lead + value + tail;
+        }
+      }
+      document.getElementById("language-switcher").value = language;
+      applyDemo();
+    }
+    document.getElementById("language-switcher").addEventListener("change", event => setLanguage(event.target.value));
+    document.getElementById("next-demo").addEventListener("click", () => { currentSample = 1 - currentSample; applyDemo(); });
+    setLanguage("vi");
+  </script>
+</body>
+</html>
+
