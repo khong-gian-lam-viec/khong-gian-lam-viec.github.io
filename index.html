@@ -117,6 +117,10 @@
     const languageNames={vi:'vi-VN',zh:'zh-CN',en:'en-US'};
     const translations={
       en:{
+        'Đạt 33% mục tiêu':'33% of goal reached',
+        'Đạt 50% mục tiêu':'50% of goal reached',
+        'Đạt 60% mục tiêu':'60% of goal reached',
+        'Đạt 67% mục tiêu':'67% of goal reached',
         'Không gian của Gia Huy':'Gia Huy’s Workspace','Quản lý cá nhân':'PERSONAL','Công cụ & tài khoản':'TOOLS & ACCOUNT','Công cụ và tài khoản':'Tools and account',
         'Tổng quan':'Overview','Học tập':'Study','Sức khỏe':'Health','Tài chính':'Finance','Lịch cá nhân':'Calendar','Mục tiêu':'Goals','Cài đặt':'Settings','Hồ sơ':'Profile',
         'Sinh viên · không gian cá nhân':'Student · personal workspace','Tìm kiếm':'Search','Gợi ý':'Help','Mở điều hướng':'Open navigation',
@@ -141,6 +145,10 @@
         'Nhập nội dung trước nhé.':'Please enter something first.','Đã thêm nhiệm vụ.':'Task added.','Đã ghi lại hoạt động.':'Activity logged.','Nhập số tiền tiết kiệm bằng VNĐ.':'Enter your savings amount in VND.','Đã tiết kiệm thêm % VNĐ.':'Added to savings: % VND.','Đã cập nhật khoản tiết kiệm hôm nay.':'Today’s savings updated.','Đã thêm việc cần làm.':'Task added.','Đã lưu chỉ số.':'Metric saved.','Tìm trong không gian của bạn bằng ô ghi nhanh.':'Use the quick entry field to search your workspace.','Bắt đầu bằng một việc nhỏ hoặc một dòng ghi chú.':'Start with one small task or a quick note.'
       },
       zh:{
+        'Đạt 33% mục tiêu':'已达成目标的 33%',
+        'Đạt 50% mục tiêu':'已达成目标的 50%',
+        'Đạt 60% mục tiêu':'已达成目标的 60%',
+        'Đạt 67% mục tiêu':'已达成目标的 67%',
         'Không gian của Gia Huy':'嘉辉的个人空间','Quản lý cá nhân':'个人管理','Công cụ & tài khoản':'工具与账户','Công cụ và tài khoản':'工具与账户',
         'Tổng quan':'总览','Học tập':'学习','Sức khỏe':'健康','Tài chính':'财务','Lịch cá nhân':'个人日历','Mục tiêu':'目标','Cài đặt':'设置','Hồ sơ':'个人资料',
         'Sinh viên · không gian cá nhân':'学生 · 个人空间','Tìm kiếm':'搜索','Gợi ý':'提示','Mở điều hướng':'打开导航',
@@ -167,13 +175,14 @@
     };
     let language=localStorage.getItem(languageKey)||'vi';
     const translateText=text=>{const phrase=text.trim();const translated=(translations[language]||{})[phrase];return translated?text.replace(phrase,translated):text};
+    const originalTexts=new WeakMap(),originalAttributes=new WeakMap();
     function applyLanguage(){
       const locale=languageNames[language]||languageNames.vi;
       document.documentElement.lang=locale;
       $('#languageSelect').value=language;
       const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
-      let node;while((node=walker.nextNode()))node.nodeValue=translateText(node.nodeValue);
-      document.querySelectorAll('[placeholder],[aria-label],[title]').forEach(el=>['placeholder','aria-label','title'].forEach(attr=>{if(el.hasAttribute(attr))el.setAttribute(attr,translateText(el.getAttribute(attr)))}));
+      let node;while((node=walker.nextNode())){if(!originalTexts.has(node))originalTexts.set(node,node.nodeValue);node.nodeValue=translateText(originalTexts.get(node))}
+      document.querySelectorAll('[placeholder],[aria-label],[title]').forEach(el=>['placeholder','aria-label','title'].forEach(attr=>{if(el.hasAttribute(attr)){let values=originalAttributes.get(el);if(!values){values={};originalAttributes.set(el,values)}if(!(attr in values))values[attr]=el.getAttribute(attr);el.setAttribute(attr,translateText(values[attr]))}}));
       $('#dateLabel').textContent=new Intl.DateTimeFormat(locale,{weekday:'long',day:'numeric',month:'long',timeZone:'Asia/Ho_Chi_Minh'}).format(new Date());
       document.title=({vi:'Không gian của Huy',en:'Gia Huy’s Workspace',zh:'嘉辉的个人空间'})[language];
     }
@@ -204,7 +213,7 @@
         const editing=grid.dataset.editing===String(i),current=escapeHtml(m.current||'—'),target=escapeHtml(m.target||'Chưa đặt');
         const now=Number.parseFloat(String(m.current).replace(/[^\d.,-]/g,'').replace(',','.')),goal=Number.parseFloat(String(m.target).replace(/[^\d.,-]/g,'').replace(',','.'));
         const pct=Number.isFinite(now)&&Number.isFinite(goal)&&goal>0?Math.max(0,Math.min(100,Math.round(now/goal*100))):null;
-        return `<article class="card core-card">${editing?`<form class="core-form" data-metric-form="${i}"><input name="name" maxlength="48" placeholder="Tên chỉ số" aria-label="Tên chỉ số" value="${escapeHtml(m.name)}"/><div class="core-form-row"><input name="current" maxlength="32" placeholder="Giá trị hiện tại" aria-label="Giá trị hiện tại" value="${escapeHtml(m.current)}"/><input name="target" maxlength="32" placeholder="Giá trị mục tiêu" aria-label="Giá trị mục tiêu" value="${escapeHtml(m.target)}"/></div><textarea name="description" maxlength="120" placeholder="Mô tả ngắn gọn" aria-label="Mô tả ngắn gọn">${escapeHtml(m.description)}</textarea><div class="core-form-actions"><button type="button" data-cancel-metric>Hủy</button><button type="submit">Lưu</button></div></form>`:`<div class="core-top"><span class="core-name ${m.name?'':'empty'}">${escapeHtml(m.name||`Chỉ số ${i+1}`)}</span><button class="core-edit" type="button" data-edit-metric="${i}">Chỉnh sửa</button></div><div class="core-current-label">Giá trị hôm nay</div><div class="core-value">${current}</div><div class="core-target"><span>Giá trị mục tiêu</span> · ${target}</div><div class="core-description">${escapeHtml(m.description||'Thêm mô tả ngắn gọn cho chỉ số này.')}</div>${pct===null?'':`<div class="core-progress" aria-label="Đạt ${pct}% mục tiêu"><i style="width:${pct}%"></i></div>`}`}</article>`;
+        return `<article class="card core-card">${editing?`<form class="core-form" data-metric-form="${i}"><input name="name" maxlength="48" placeholder="Tên chỉ số" aria-label="Tên chỉ số" value="${escapeHtml(m.name)}"/><div class="core-form-row"><input name="current" maxlength="32" placeholder="Giá trị hiện tại" aria-label="Giá trị hiện tại" value="${escapeHtml(m.current)}"/><input name="target" maxlength="32" placeholder="Giá trị mục tiêu" aria-label="Giá trị mục tiêu" value="${escapeHtml(m.target)}"/></div><textarea name="description" maxlength="120" placeholder="Mô tả ngắn gọn" aria-label="Mô tả ngắn gọn">${escapeHtml(m.description)}</textarea><div class="core-form-actions"><button type="button" data-cancel-metric>Hủy</button><button type="submit">Lưu</button></div></form>`:`<div class="core-top"><span class="core-name ${m.name?'':'empty'}">${escapeHtml(m.name||`Chỉ số ${i+1}`)}</span><button class="core-edit" type="button" data-edit-metric="${i}">Chỉnh sửa</button></div><div class="core-current-label">Giá trị hôm nay</div><div class="core-value">${current}</div><div class="core-target"><span>Giá trị mục tiêu</span><span> · </span><span>${target}</span></div><div class="core-description">${escapeHtml(m.description||'Thêm mô tả ngắn gọn cho chỉ số này.')}</div>${pct===null?'':`<div class="core-progress" aria-label="Đạt ${pct}% mục tiêu"><i style="width:${pct}%"></i></div>`}`}</article>`;
       }).join('');
     }
     function renderModules(){
@@ -216,6 +225,7 @@
       const moduleDone=data.moduleTasks.filter(x=>x.done).length,moduleOpen=data.moduleTasks.length-moduleDone,done=data.tasks.filter(x=>x.done).length+moduleDone,open=data.tasks.filter(x=>!x.done).length+moduleOpen,total=data.tasks.length+data.moduleTasks.length;
       $('#doneCount').textContent=done;$('#openCount').textContent=open;$('#doneProgress').style.width=(total?Math.round(done/total*100):0)+'%';
       $('#noteCount').textContent=data.notes.length;$('#noteList').innerHTML=data.notes.length?data.notes.slice().reverse().map(n=>`<article class="saved-note"><span>${escapeHtml(n.text)}</span><time>${new Date(n.at).toLocaleTimeString(languageNames[language]||'vi-VN',{hour:'2-digit',minute:'2-digit'})}</time></article>`).join(''):'<article class="saved-note"><span>Ghi chú mới của bạn sẽ xuất hiện ở đây.</span><time>Hôm nay</time></article>';
+      applyLanguage();
     }
     function runQuickAction(action){
       const input=$('#captureInput'),text=input.value.trim();if(!text){input.focus();toast('Nhập nội dung trước nhé.');return}
